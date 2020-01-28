@@ -1,0 +1,27 @@
+<div class="col-sm-8">
+    <form [formGroup]="submitForm" (ngSubmit)="onSubmit(submitForm.value)">
+       <div class="form-group">
+           <input type="text" class="form-control" name="id" placeholder="Enter Id" id="id" [(ngModel)]="user.id" formControlName="id">
+           <div *ngIf="f.id.errors && f.id.touched">
+              <small *ngIf="f.id.errors.required" class="text-danger">Id is required</small>
+              <small *ngIf="f.id.errors.pattern">Only Digit</small>
+           </div>
+        </div>
+
+       <div class="form-group">
+         <input type="text" class="form-control" name="name" placeholder="Enter Your Name" id="name" [(ngModel)]="user.name" formControlName="name">
+       </div>
+
+       <div class="form-group">
+           <input type="text" class="form-control" name="email" placeholder="Enter Email" id="email" [(ngModel)]="user.email" formControlName="email">
+       </div>
+
+       <div class="form-group">
+           <input type="text" class="form-control" name="contact" id="contact" placeholder="Contact" [(ngModel)]="user.phonenumb" formControlName="contact">
+       </div>
+
+       <div>
+           <button type="submit" class="btn btn-success" (click)="setDetails()">Submit</button>
+       </div>
+    </form>
+</div>

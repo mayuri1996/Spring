@@ -1,0 +1,24 @@
+<div class="col-sm-8">
+    <div class="table-responsive">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Sr.No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of list; index as i">
+            <td>{{i+1}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phonenumb}}</td>
+            <td><button class="btn btn-primary" (click)='deleteRecord(user)'>Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
